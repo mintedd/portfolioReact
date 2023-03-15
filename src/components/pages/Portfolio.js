@@ -5,7 +5,7 @@ import { Projects } from '../../utils/Projects'
 
 export default function Portfolio() {
     return (
-        <div>
+        <div class="card-deck">
 
             {
                 Projects.map((project) => {
