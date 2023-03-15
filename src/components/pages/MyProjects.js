@@ -4,7 +4,7 @@ import React from 'react'
 
 function Project({ data }) {
   return (
-    <div className="project">
+    <div>
 
       <img src={data.image} alt="project" />
       <div className="overlay">

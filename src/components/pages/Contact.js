@@ -35,7 +35,6 @@ function Contact() {
 
   return (
     <div>
-          <div class="form-group">
       <div>
         <h2>Get in Touch with Me</h2>
       </div>
@@ -46,27 +45,36 @@ function Contact() {
             <p>Thanks for reaching out!</p>
           </div>
         ) : (
-          <form ref={form} onSubmit={sendEmail} noValidate>
-            <input
-              type='text'
-              name='user_name'
-              className='user'
-              placeholder='Name'
-              required
-              onInvalid={() => setNameError(true)}
-              onBlur={() => setNameError(false)}
-            />
-            {nameError && <div>Please enter your name.</div>}
-            <input
-              type='email'
-              name='user_email'
-              className='user'
-              placeholder='Email'
-              required
-              pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
-              onInvalid={() => setEmailError(true)}
-              onBlur={() => setEmailError(false)}
-            />
+          <form class="form-group" ref={form} onSubmit={sendEmail} noValidate>
+            <div>
+            <label for="exampleNameInput1">Name</label>
+              <input
+                type='text'
+                name='user_name'
+                class="form-control"
+                placeholder='Name'
+                required
+                onInvalid={() => setNameError(true)}
+                onBlur={() => setNameError(false)}
+              />
+              </div>
+              <div>
+              {nameError && <div>Please enter your name.</div>}
+              <label for="exampleInputEmail1">Email address</label>
+              <input
+                id="exampleInputEmail1"
+                type='email'
+                name='user_email'
+                class="form-control" placeholder='Enter Email'
+                aria-describedby="emailHelp"
+                required
+                pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
+                onInvalid={() => setEmailError(true)}
+                onBlur={() => setEmailError(false)}
+              />
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+
             {emailError && (
               <div>
                 Please enter a valid email address.
@@ -74,26 +82,29 @@ function Contact() {
             )}
             <textarea
               name='message'
-              className='user'
+              class="form-control"
               placeholder='Message'
               required
               onInvalid={() => setMessageError(true)}
               onBlur={() => setMessageError(false)}
             />
+
             {messageError && (
               <div>Please enter a message.</div>
             )}
-            <input
+            <div>
+                          <input
               type='submit'
-              value='Send'
-              className='button contact-button'
+              value='Send Message'
+              class="btn btn-primary"
             />
+            </div>
+
           </form>
         )}
       </div>
     </div>
-    
-    </div>
+
 
 
 
