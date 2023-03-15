@@ -16,7 +16,7 @@ const Resume = () => {
       <h2>Looking for a resume?</h2>
   </div>
   <div>
-      <button className='button resume-button' onClick={handleClick}>Download Here</button>
+      <button class="btn btn-primary" onClick={handleClick}>Download Here</button>
 </div>
 </> 
 
